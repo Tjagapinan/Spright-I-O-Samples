@@ -1,0 +1,27 @@
+﻿<div ng-include="'/Scripts/sabio/application/websites/templates/tabs.html'"></div>
+<div class="col-md-12 col-sm-12">
+    <div class="page-header-inner">
+        <h2>Records Management </h2>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr id="rowTemp" data-ng-repeat="item in records.items">
+                <th scope="row" class="IDTD">{{item.id}}</th>
+                <td class="NameTD">{{item.name}}</td>
+                <td class="SlugTD">{{item.slug}}</td>
+                <td>
+                    <a ng-href="#/records/{{records.websiteId}}/records/{{item.id}}" class="btn btn-info btn-outline newRecordBtn">Records</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

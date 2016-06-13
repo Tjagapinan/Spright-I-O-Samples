@@ -1,0 +1,51 @@
+﻿<div ng-include="'/Scripts/sabio/application/websites/templates/tabs.html'"></div>
+<div class="page-header-inner">
+    <h2>Records</h2>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a ng-href="#/records/{{rEntity.websiteId}}" class="btn btn-info btn-outline pull-right" id="backToHome">Back</a>
+        <a ng-href="#/records/{{rEntity.websiteId}}/records/{{rEntity.entityId}}/create" class="btn btn-info btn-outline newRecordBtn pull-right" style="margin-right: 15px;">Add Record</a>
+
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-responsive table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <td class="col-lg-3"><h4>Actions</h4></td>
+                        <td data-ng-repeat="attr in rEntity.entity.attributes track by attr.id"><h4>{{attr.name}}</h4></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="item in rEntity.items | filter:rEntity.q |  itemsPerPage:rEntity.pageSize" total-items="rEntity.totalItems" current-page="rEntity.currentPage">
+                        <!--paginate here-->
+                        <td ng-data="item in rEntity.items">
+                                <a ng-href="#/records/{{rEntity.websiteId}}/records/{{rEntity.entityId}}/edit/{{item.id}}" class="btn btn-info btn-outline">Edit Record</a>
+                                <a ng-click="rEntity.deleteRecord(item.id)" class="btn btn-danger btn-outline">X</a>
+                           </td>
+                        
+                        <td data-ng-repeat="values in item.value track by values.attributeID">
+                        
+                            <span ng-if="values.valueString"> {{values.valueString | limitTo : 50}} </span>
+                            <span ng-if="values.valueInt"> {{values.valueInt | limitTo : 50}} </span>
+                            <span ng-if="values.valueDecimal"> {{values.valueDecimal | limitTo : 50}} </span>
+                            <span ng-if="values.valueText"> {{values.valueText | limitTo : 50}} </span>
+                            <span ng-if="values.valueGeo"> {{values.valueGeo | limitTo : 50}} </span>                         
+                        
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <dir-pagination-controls boundary-links="true" on-page-change="rEntity.pageChangeHandler(newPageNumber);" template-url="/Scripts/bower_components/angularUtils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+    </div>
+</div>
+
