@@ -1,7 +1,7 @@
-﻿using Sabio.Data;
-using Sabio.Web.Domain.EVA;
-using Sabio.Web.Models.Requests.EVA;
-using Sabio.Web.Services.Interfaces;
+﻿using Spright.Data;
+using Spright.Web.Domain.EVA;
+using Spright.Web.Models.Requests.EVA;
+using Spright.Web.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Sabio.Web.Services.EVA
+namespace Spright.Web.Services.EVA
 {
     public class ValueServices : BaseService, IValueServices
     {
