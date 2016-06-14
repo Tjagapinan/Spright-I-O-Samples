@@ -1,10 +1,10 @@
 ﻿using Microsoft.Practices.Unity;
-using Sabio.Data;
-using Sabio.Web.Domain;
-using Sabio.Web.Enums;
-using Sabio.Web.Models.Requests;
-using Sabio.Web.Models.Requests.EVA;
-using Sabio.Web.Services.Interfaces;
+using Spright.Data;
+using Spright.Web.Domain;
+using Spright.Web.Enums;
+using Spright.Web.Models.Requests;
+using Spright.Web.Models.Requests.EVA;
+using Spright.Web.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace Sabio.Web.Services
+namespace Spright.Web.Services
 {
     public class EntityServices : BaseService, IEntityServices
     {
