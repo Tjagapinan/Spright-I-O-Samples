@@ -1,9 +1,9 @@
-﻿using Sabio.Data;
-using Sabio.Web.Enums;
-using Sabio.Web.Models;
-using Sabio.Web.Models.Requests;
-using Sabio.Web.Models.Requests.EVA;
-using Sabio.Web.Services.Interfaces;
+﻿using Spright.Data;
+using Spright.Web.Enums;
+using Spright.Web.Models;
+using Spright.Web.Models.Requests;
+using Spright.Web.Models.Requests.EVA;
+using Spright.Web.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Sabio.Web.Services
+namespace Spright.Web.Services
 {
     public class AttributeServices : BaseService, IAttributeServices
     {
